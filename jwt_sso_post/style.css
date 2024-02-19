@@ -1,3 +1,8 @@
+@font-face {
+    font-family: "Roboto";
+    src: local("Roboto"),
+     url(/fonts/roboto/Roboto-Black.ttf) format("truetype");
+  }
 .jwt-container {
     display: flex;
     justify-content: center;
@@ -12,22 +17,24 @@ input {
 .jwt-main {
     margin-top: 20px;
     font-family: Avenir, Helvetica, Arial, sans-serif;
-  }
+}
 .select {
     font-family: "Roboto", Helvetica, Arial;
     font-weight: 300;
     font-size: 12px;
     color: black;
     width: 100%;
-  }
+    font-weight: bolder !important;
+    font-family: "Roboto", Helvetica, Arial !important;
+}
   .top {
     width: 100%;
     text-align: center;
     margin-top: 20px;
-  }
+}
   h3 {
     color: #00363d;
-  }
+}
 .submit {
     margin-top: 15px;
     margin-bottom: 15px;
@@ -51,7 +58,7 @@ input[type=submit] {
     width: 60%;
     margin: auto;
     padding-bottom: 15px;
-  }
+}
   a {
     color: #00363d;
 }
