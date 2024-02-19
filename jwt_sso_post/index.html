@@ -6,34 +6,36 @@
   <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <link rel="stylesheet" href="style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 </head>
 
 <body>
-  <div class="top">
+<div class="top">
     <img alt="Zendesk logo" src="/images/Zendesk_resize.png" width="120px">
     <div class="select">
       <h1><b>JWT SSO Login - POST form</b></h1>
     </div><br>
     <hr>
-  </div>
+</div>
 
 <div class="jwt-main">
   <div class="jwt-container">
     <form id="jwtForm" method="post" action="https://{{yoursubdomain}}.zendesk.com/access/jwt">
+
       <label for="domainInput"><h3>Enter your Zendesk domain</h1></label>
       <input id="domainInput" name="domain" value="" placeholder="Your Zendesk domain" size="50" required/><br><br>
+
       <label for="jwtInput"><h3>Enter your JWT</h3></label>
       <span class="getJWT"><i><a href="http://zendesk-jwt-generator.beyondthesight.net/" target="_blank">How to get it?</a></i></span><br>
       <!-- <input id="jwtInput" name="jwt" /> -->
       <textarea id="jwtInput" rows="5" cols="60" name="jwt" placeholder="Your jwt here (make sure you leave no blank space)" required></textarea><br><br>
+
       <input type="submit" onsubmit="handleForm()" value="Login"><br><br>
       <div class="warning"><a target="_blank" href="https://support.zendesk.com/hc/en-us/articles/4408845838874-Enabling-JWT-single-sign-on#:~:text=If%20Zendesk%20encounters%20an%20error%20while%20processing%20a%20JWT%20login%20request%2C%20it%20sends%20a%20message%20that%20explains%20the%20issue.%20If%20you%20specified%20a%20remote%20logout%20URL%20when%20you%20configured%20the%20JWT%20integration%2C%20it%20redirects%20to%20that%20URL%20and%20passes%20a%20message%20and%20a%20kind%20parameter.%20In%20case%20of%20error%2C%20the%20kind%20parameter%20always%20has%20the%20value%20%22error%22."><b><i>If the login fails</i></b></a>, you will be<a target="_blank" href="https://support.zendesk.com/hc/en-us/articles/4408845838874-Enabling-JWT-single-sign-on#:~:text=For%20Remote%20Logout%20URL%2C%20a%20logout%20URL%20where%20users%20should%20be%20redirected%20after%20they%20sign%20out%20of%20Zendesk."> <b><i>redirected to your "remote logout URL"</i></b></a> set in your JWT SSO related configuration.</div>
+    
     </form>
   </div>
 </div>
+</body>
 
 <script>
   function handleForm(event) {
@@ -44,9 +46,9 @@
     bindVal();
       function bindVal()
       {
-        inputDomain.addEventListener('keyup', cm);
+        inputDomain.addEventListener('keyup', passVal);
       }
-      function cm(e)
+      function passVal(e)
       {
         domainName=e.target.value;
         document.getElementById('jwtForm').action = "https://" + domainName + ".zendesk.com/access/jwt";
