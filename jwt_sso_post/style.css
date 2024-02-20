@@ -93,3 +93,13 @@ input, textarea {
   width:90%;
   }
 }
+@media (min-width:768px) and (max-width: 1500px) {
+  form {
+    width: 100%;
+    text-align: center;
+}
+/* Style the text boxes */
+input, textarea {
+  width:90%;
+  }
+}
