@@ -83,3 +83,13 @@ a:active {
 .warning {
     font-size: 13px;
 }
+@media (max-width: 768px) {
+  form {
+    width: 100%;
+    text-align: center;
+}
+/* Style the text boxes */
+input, textarea {
+  width:90%;
+  }
+}
